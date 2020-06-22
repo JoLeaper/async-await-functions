@@ -19,8 +19,8 @@ const schema = new mongoose.Schema({
 }, 
 
 { timestamps: {
-  createdAt: 'orderDate',
-  updatedAt: 'orderUpdate'
+  createdAt: 'reviewDate',
+  updatedAt: 'latestUpdate'
 } } 
 
 );

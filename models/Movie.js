@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-  
   title: {
     type: String,
     required: true
@@ -19,7 +18,7 @@ const schema = new mongoose.Schema({
 });
 
 schema.virtual('review', {
-  ref: 'Reviews',
+  ref: 'Review',
   localField: '_id',
   foreignField: 'movie'
 });
