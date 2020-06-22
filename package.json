@@ -1,0 +1,25 @@
+{
+  "name": "async-await-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --runInBand --testLocationInResults",
+    "test:watch": "npm run test -- --watch",
+    "start": "node index.js",
+    "start:watch": "nodemon index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "eslint": "^7.3.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {}
+}
