@@ -21,10 +21,42 @@ describe('product routes', () => {
   });
 
   it('checks to see if a movie model is created correctly', async() => {
-    
+    const movie1 = Movie.create({
+      title: 'The Boom',
+      description: 'Big Boom',
+      studio: 'SuperLarge'
+    });
+
+    expect(movie1).toEqual({
+      _id: movie1._id,
+      title: 'The Boom',
+      description: 'Big Boom',
+      studio: 'SuperLarge',
+      __v: 0
+    });
   });
 
   it('checks to see if a Review model is created correctly', async() => {
+    const movie1 = Movie.create({
+      title: 'The Boom',
+      description: 'Big Boom',
+      studio: 'SuperLarge'
+    });
 
+    const review1 = Review.create({
+      movie: movie1._id,
+      authorName: 'Guy Guy',
+      comment: 'It was alright',
+    });
+
+    expect(movie1).toEqual({
+      id: review1._id,
+      movie: movie1._id,
+      authorName: 'Guy Guy',
+      comment: 'It was alright',
+      purchaseDate: expect.any(String),
+      lastPourDate: expect.any(String),
+      __v: 0
+    });
   });
 });
