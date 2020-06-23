@@ -67,29 +67,10 @@ describe('product routes', () => {
     expect(await Movie.find()).toHaveLength(5);
   });
 
-  // it('checks if 100 reviews are created', async() => {
-  //   const movie1 = await Movie.create({
-  //     title: 'The Boom',
-  //     description: 'Big Boom',
-  //     studio: 'SuperLarge'
-  //   });
-
-  //   const review1 = await Review.create({
-  //     movie: movie1._id,
-  //     authorName: 'Guy Guy',
-  //     comment: 'It was alright',
-  //   });
-
-  //   expect(review1.toJSON()).toEqual({
-  //     _id: review1._id,
-  //     movie: movie1._id,
-  //     authorName: 'Guy Guy',
-  //     comment: 'It was alright',
-  //     reviewDate: expect.any(Date),
-  //     latestUpdate: expect.any(Date),
-  //     __v: 0
-  //   });
-  // });
+  it('checks if 100 reviews are created', async() => {
+    await seedData();
+    expect(await Review.find()).toHaveLength(100);
+  });
 
   // it('checks if number of reviews/movies can be changed', async() => {
 
