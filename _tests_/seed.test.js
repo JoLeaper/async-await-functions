@@ -72,8 +72,14 @@ describe('product routes', () => {
     expect(await Review.find()).toHaveLength(100);
   });
 
-  // it('checks if number of reviews/movies can be changed', async() => {
+  it('checks if number of movies and reviews can be changed with object input', async() => {
+    const numMoviesAndReviews = {
+      movies: 12,
+      reviews: 50
+    };
 
-  //   expect().toEqual();
-  // });
+    await seedData(numMoviesAndReviews);
+    expect(await Movie.find()).toHaveLength(12);
+    expect(await Review.find()).toHaveLength(50);
+  });
 });
